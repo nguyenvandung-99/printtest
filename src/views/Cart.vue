@@ -1,16 +1,16 @@
 <template>
-  <ProductOverview />
+  <CartViewer />
 </template>
 
 <script>
 import Vue from 'vue'
 import { Component } from "vue-property-decorator"
-import ProductOverview from "@/components/ProductOverview.vue"
+import CartViewer from "@/components/CartViewer.vue"
 
 @Component({
   components: {
-    ProductOverview
+    CartViewer
   }
 })
-export default class Home extends Vue {}
+export default class Cart extends Vue {}
 </script>

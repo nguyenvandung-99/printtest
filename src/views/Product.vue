@@ -12,5 +12,5 @@ import ProductOverview from "@/components/ProductOverview.vue"
     ProductOverview
   }
 })
-export default class Home extends Vue {}
+export default class Product extends Vue {}
 </script>
