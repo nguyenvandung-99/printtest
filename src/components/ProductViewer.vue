@@ -19,7 +19,7 @@
             :label="prop.title || prop.slug"
             v-model="currentSelection.properties[i].value"
             :items="prop.options"
-            :item-text="prop.name ? 'name' : 'slug'"
+            :item-text="prop.options[0].name ? 'name' : 'slug'"
             item-value="slug"
             hide-details
           />
