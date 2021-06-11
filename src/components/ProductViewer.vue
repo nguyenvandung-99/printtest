@@ -147,6 +147,7 @@ export default class ProductViewer extends Vue {
           excludeMatch = false;
           break;
         }
+        excludeMatch = true;
       }
       if (excludeMatch) {
         this.$store.commit(
