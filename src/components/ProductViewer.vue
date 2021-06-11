@@ -16,10 +16,10 @@
           <v-select
             v-if="prop.slug !== 'size'"
             outlined
-            :label="prop.title"
+            :label="prop.title || prop.slug"
             v-model="currentSelection.properties[i].value"
             :items="prop.options"
-            item-text="name"
+            :item-text="prop.name ? 'name' : 'slug'"
             item-value="slug"
             hide-details
           />
@@ -140,10 +140,11 @@ export default class ProductViewer extends Vue {
       const excludeParams = this.product.excludes[i] as any[];
       for (let j = 0; j < excludeParams.length; j++) {
         const param = excludeParams[j];
+        console.log(newItem.properties);
         const itemProperty = newItem.properties.find(
           (prop: any) => prop.slug === param.property
         );
-        if (!(param.options as any[]).includes(itemProperty.value)) {
+        if (!itemProperty || !(param.options as any[]).includes(itemProperty.value)) {
           excludeMatch = false;
           break;
         }
